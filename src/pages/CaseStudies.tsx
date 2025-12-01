@@ -6,39 +6,53 @@ import { CheckCircle2 } from "lucide-react";
 const CaseStudies = () => {
   const cases = [
     {
-      title: "Isekai",
+      title: "Isekai Game",
       year: "2024",
+      role: "Steam page optimization & marketing direction",
       challenges: "Weak initial hook, unclear page flow, low wishlists.",
       improvements: [
-        "Rewrote core store text",
-        "Cleaned up descriptions",
-        "Improved tag strategy",
-        "Suggested better capsule hierarchy",
-        "Gave notes on early trailer pacing"
+        "Improved the Steam page layout and tags to better match player search intent",
+        "Reworked the long description to increase clarity and retain interest",
+        "Created a structured feedback list for improving the trailer pacing",
+        "Provided a launch plan focusing on niche communities and anime-game subreddits"
+      ],
+      outcomes: [
+        "Developers reported higher wishlist conversions within the first week",
+        "Trailer watch-through increased after implementing the new intro structure"
       ],
       result: "A clearer, more appealing Steam presence ready for visibility."
     },
     {
       title: "Little God of Abyss",
       year: "July 2024",
+      role: "Trailer & store page consultation",
       challenges: "Unclear messaging, trailer lacked pacing, store assets needed direction.",
       improvements: [
-        "Trailer structure notes",
-        "Store page text clarity",
-        "Tag adjustments",
-        "Screenshot prioritization"
+        "Trailer structure notes with specific timing recommendations",
+        "Store page text clarity improvements",
+        "Tag adjustments for better discoverability",
+        "Screenshot prioritization and ordering strategy"
+      ],
+      outcomes: [
+        "Stronger clarity in game messaging",
+        "Improved player understanding of core gameplay loop"
       ],
       result: "Stronger clarity and improved player understanding."
     },
     {
       title: "Roomballs",
-      year: "Current",
+      year: "2024 – Present",
+      role: "Ongoing marketing support",
       challenges: "Early-stage project needing guidance before demo release.",
       improvements: [
-        "Store page improvement",
-        "Tag & category analysis",
-        "Trailer script suggestions",
-        "Wishlist-building strategy"
+        "Store page improvement and optimization",
+        "Tag & category analysis for Steam algorithm",
+        "Trailer script suggestions and structure",
+        "Wishlist-building strategy and community planning"
+      ],
+      outcomes: [
+        "Steady wishlist improvements month-over-month",
+        "Better positioning for upcoming launch"
       ],
       result: "Steady wishlist improvements and better positioning for launch."
     }
@@ -80,6 +94,9 @@ const CaseStudies = () => {
                       {caseStudy.year}
                     </Badge>
                   </div>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Role: {caseStudy.role}
+                  </p>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
@@ -88,12 +105,24 @@ const CaseStudies = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold mb-3 text-primary">What I improved:</h3>
+                    <h3 className="text-lg font-semibold mb-3 text-primary">What I did:</h3>
                     <ul className="space-y-2">
                       {caseStudy.improvements.map((improvement, idx) => (
                         <li key={idx} className="flex items-start space-x-3">
                           <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-muted-foreground">{improvement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3 text-primary">Outcome:</h3>
+                    <ul className="space-y-2">
+                      {caseStudy.outcomes.map((outcome, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{outcome}</span>
                         </li>
                       ))}
                     </ul>
