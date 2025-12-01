@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Zap, Target, TrendingUp, Eye, Sparkles, BarChart3, Users, MousePointer } from "lucide-react";
 import heroImage from "@/assets/hero-gaming.jpg";
 import wishlistMetrics from "@/assets/wishlist-metrics.jpg";
+import wishlistAnalytics from "@/assets/wishlist-analytics.webp";
 
 const Home = () => {
   const fadeInUp = {
@@ -272,26 +273,51 @@ const Home = () => {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Card className="bg-card border-border overflow-hidden h-full">
+                <CardContent className="p-0">
+                  <img 
+                    src={wishlistMetrics} 
+                    alt="Wishlist growth metrics from indie game projects" 
+                    className="w-full h-auto"
+                  />
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <Card className="bg-card border-border overflow-hidden h-full">
+                <CardContent className="p-0">
+                  <img 
+                    src={wishlistAnalytics} 
+                    alt="Daily wishlist analytics showing +32% growth" 
+                    className="w-full h-auto"
+                  />
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-4xl mx-auto"
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-sm text-muted-foreground text-center mt-6 italic"
           >
-            <Card className="bg-card border-border overflow-hidden">
-              <CardContent className="p-0">
-                <img 
-                  src={wishlistMetrics} 
-                  alt="Wishlist growth metrics from indie game projects" 
-                  className="w-full h-auto"
-                />
-              </CardContent>
-            </Card>
-            <p className="text-sm text-muted-foreground text-center mt-4 italic">
-              Note: These results are from my hands-on work with small indie teams and solo developers.
-            </p>
-          </motion.div>
+            Note: These results are from my hands-on work with small indie teams and solo developers.
+          </motion.p>
         </div>
       </section>
 
