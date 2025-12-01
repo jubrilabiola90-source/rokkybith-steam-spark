@@ -79,14 +79,14 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={heroImage} 
+            alt="Gaming background" 
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -287,6 +287,9 @@ const Home = () => {
                     src={wishlistMetrics} 
                     alt="Wishlist growth metrics from indie game projects" 
                     className="w-full h-auto"
+                    loading="lazy"
+                    width="800"
+                    height="600"
                   />
                 </CardContent>
               </Card>
@@ -304,6 +307,9 @@ const Home = () => {
                     src={wishlistAnalytics} 
                     alt="Daily wishlist analytics showing +32% growth" 
                     className="w-full h-auto"
+                    loading="lazy"
+                    width="800"
+                    height="600"
                   />
                 </CardContent>
               </Card>
@@ -321,6 +327,9 @@ const Home = () => {
                     src={massiJoseClicks} 
                     alt="Massi vs. José Steam page clicks - 3193 clicks with USA as top country" 
                     className="w-full h-auto"
+                    loading="lazy"
+                    width="800"
+                    height="600"
                   />
                 </CardContent>
               </Card>
