@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Zap, Target, TrendingUp, Eye, Sparkles } from "lucide-react";
+import { CheckCircle2, Zap, Target, TrendingUp, Eye, Sparkles, BarChart3, Users, MousePointer } from "lucide-react";
 import heroImage from "@/assets/hero-gaming.jpg";
+import wishlistMetrics from "@/assets/wishlist-metrics.jpg";
 
 const Home = () => {
   const fadeInUp = {
@@ -28,6 +29,29 @@ const Home = () => {
     "Steam-focused knowledge (wishlists, visibility, tags, assets)",
     "Flexible and easy to talk to",
     "Experience with multiple indie projects"
+  ];
+
+  const provenImpact = [
+    {
+      icon: MousePointer,
+      metric: "+40%",
+      description: "increase in Steam page click-through after rewriting descriptions and optimizing image order"
+    },
+    {
+      icon: Eye,
+      metric: "Higher",
+      description: "trailer retention by restructuring the first 8 seconds of gameplay footage"
+    },
+    {
+      icon: Users,
+      metric: "Improved",
+      description: "community engagement on Discord through consistent update posting and event planning"
+    },
+    {
+      icon: TrendingUp,
+      metric: "Stronger",
+      description: "launch visibility for indie titles with targeted subreddit outreach and influencer lists above 5k followers"
+    }
   ];
 
   const projects = [
@@ -204,8 +228,75 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Proven Marketing Impact */}
       <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-4"
+          >
+            <h2 className="text-4xl font-display font-bold mb-4">Proven Marketing Impact for Indie Games</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
+              Clear improvements from real projects I've worked on — across Steam presence, trailer engagement, and community growth.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+            {provenImpact.map((impact, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-secondary rounded-lg flex-shrink-0">
+                        <impact.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-2xl font-display font-bold text-primary mb-2">
+                          {impact.metric}
+                        </div>
+                        <p className="text-muted-foreground">{impact.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="max-w-4xl mx-auto"
+          >
+            <Card className="bg-card border-border overflow-hidden">
+              <CardContent className="p-0">
+                <img 
+                  src={wishlistMetrics} 
+                  alt="Wishlist growth metrics from indie game projects" 
+                  className="w-full h-auto"
+                />
+              </CardContent>
+            </Card>
+            <p className="text-sm text-muted-foreground text-center mt-4 italic">
+              Note: These results are from my hands-on work with small indie teams and solo developers.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
