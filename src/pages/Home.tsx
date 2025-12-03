@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Zap, Target, TrendingUp, Eye, Sparkles, BarChart3, Users, MousePointer } from "lucide-react";
+import { CheckCircle2, Zap, Target, TrendingUp, Eye, Sparkles, BarChart3, Users, MousePointer, Quote } from "lucide-react";
 import heroImage from "@/assets/hero-gaming.jpg";
 import wishlistMetrics from "@/assets/wishlist-metrics.jpg";
 import wishlistAnalytics from "@/assets/wishlist-analytics.webp";
@@ -74,6 +74,24 @@ const Home = () => {
     }
   ];
 
+  const testimonials = [
+    {
+      quote: "Rokkybith gave me clear, actionable feedback on my Steam page that I could implement immediately. My wishlist numbers started climbing within a week.",
+      author: "Solo Dev",
+      project: "Indie RPG Project"
+    },
+    {
+      quote: "The trailer review was incredibly detailed. He pointed out exactly what wasn't working in the first 8 seconds and how to fix it.",
+      author: "Game Developer",
+      project: "Action Platformer"
+    },
+    {
+      quote: "No marketing fluff, just practical advice that actually works. Highly recommend for any indie dev looking to improve their Steam presence.",
+      author: "Indie Studio",
+      project: "Puzzle Game"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -128,7 +146,7 @@ const Home = () => {
                 size="lg" 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 glow-border text-lg px-8 py-6"
               >
-                <Link to="/contact">📩 Get a Free Steam Page or Trailer Review</Link>
+                <a href="https://discord.com/channels/@me/1445340238934179890" target="_blank" rel="noopener noreferrer">📩 Get a Free Steam Page or Trailer Review</a>
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
                 Clear, practical feedback to help your game stand out.
@@ -348,8 +366,49 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Customer Testimonials */}
       <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-display font-bold mb-4">What Developers Say</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Feedback from indie developers I've worked with.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 h-full">
+                  <CardContent className="p-6">
+                    <Quote className="w-8 h-8 text-primary mb-4 opacity-50" />
+                    <p className="text-muted-foreground mb-6 italic">"{testimonial.quote}"</p>
+                    <div className="border-t border-border pt-4">
+                      <p className="font-semibold">{testimonial.author}</p>
+                      <p className="text-sm text-primary">{testimonial.project}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -410,7 +469,7 @@ const Home = () => {
               If you're working on a Steam page, demo, or trailer, I'll review it for free and send you improvements you can apply instantly.
             </p>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 glow-border text-lg px-8 py-6">
-              <Link to="/contact">→ Request a Free Review</Link>
+              <a href="https://discord.com/channels/@me/1445340238934179890" target="_blank" rel="noopener noreferrer">→ Request a Free Review on Discord</a>
             </Button>
           </motion.div>
         </div>
