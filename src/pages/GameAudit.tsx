@@ -12,7 +12,11 @@ import {
   Zap,
   Users,
   Lightbulb,
-  ArrowRight
+  ArrowRight,
+  DollarSign,
+  Clock,
+  MessageSquare,
+  FileCheck
 } from "lucide-react";
 
 const GameAudit = () => {
@@ -313,6 +317,118 @@ const GameAudit = () => {
             <p className="text-muted-foreground italic">
               Think of it as a roadmap for smarter development, not a lecture.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <DollarSign className="w-12 h-12 text-primary mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Simple Pricing</h2>
+            <p className="text-lg text-muted-foreground">
+              One price. Full audit. No hidden fees.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-lg mx-auto"
+          >
+            <Card className="bg-gradient-card border-primary/50 glow-border overflow-hidden">
+              <CardContent className="p-0">
+                <div className="bg-primary/10 p-6 text-center border-b border-border">
+                  <h3 className="text-2xl font-display font-bold mb-2">Complete Game Audit</h3>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-5xl md:text-6xl font-display font-bold text-primary">$50</span>
+                    <span className="text-muted-foreground">/ audit</span>
+                  </div>
+                </div>
+                
+                <div className="p-6 space-y-4">
+                  <div className="flex items-start gap-3">
+                    <FileCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Full Professional Audit</p>
+                      <p className="text-sm text-muted-foreground">Comprehensive analysis of your game</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Gameplay & Mechanics Review</p>
+                      <p className="text-sm text-muted-foreground">Core loop, balance, and pacing analysis</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">UX & Player Experience</p>
+                      <p className="text-sm text-muted-foreground">First-time experience, controls, clarity</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Retention & Engagement</p>
+                      <p className="text-sm text-muted-foreground">Drop-off risks and motivation systems</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Market Positioning</p>
+                      <p className="text-sm text-muted-foreground">Competitive analysis and differentiation</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Fast Turnaround</p>
+                      <p className="text-sm text-muted-foreground">Delivered within 3-5 business days</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <MessageSquare className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Follow-up Support</p>
+                      <p className="text-sm text-muted-foreground">Questions answered after delivery</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6 pt-0">
+                  <Button 
+                    asChild 
+                    size="lg" 
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-border text-lg py-6"
+                  >
+                    <a href="https://discord.com/channels/@me/1445340238934179890" target="_blank" rel="noopener noreferrer">
+                      👉 Get Your Audit Now
+                    </a>
+                  </Button>
+                  <p className="text-center text-sm text-muted-foreground mt-4">
+                    Pay after you're satisfied with the audit
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>
