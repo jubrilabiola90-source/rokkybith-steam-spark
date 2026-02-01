@@ -7,6 +7,7 @@ import heroImage from "@/assets/hero-gaming.jpg";
 import wishlistMetrics from "@/assets/wishlist-metrics.jpg";
 import wishlistAnalytics from "@/assets/wishlist-analytics.webp";
 import massiJoseClicks from "@/assets/massi-jose-clicks.jpg";
+import steamAnalyticsResult from "@/assets/steam-analytics-result.jpeg";
 
 const Home = () => {
   const fadeInUp = {
@@ -292,12 +293,36 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Card className="bg-card border-border overflow-hidden h-full">
+                <CardContent className="p-0">
+                  <img 
+                    src={steamAnalyticsResult} 
+                    alt="Steam page analytics - 2.8M+ impressions and 79K+ visits" 
+                    className="w-full h-auto"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                  />
+                  <div className="p-4 bg-card">
+                    <p className="text-sm font-semibold text-primary">2.8M+ Impressions • 79K+ Visits</p>
+                    <p className="text-xs text-muted-foreground">Steam page traffic results</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
               <Card className="bg-card border-border overflow-hidden h-full">
                 <CardContent className="p-0">
@@ -317,7 +342,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
               <Card className="bg-card border-border overflow-hidden h-full">
                 <CardContent className="p-0">
@@ -337,7 +362,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
             >
               <Card className="bg-card border-border overflow-hidden h-full">
                 <CardContent className="p-0">
