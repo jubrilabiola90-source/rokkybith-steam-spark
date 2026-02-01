@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { 
   Gamepad2, 
   Brain, 
@@ -16,7 +22,8 @@ import {
   DollarSign,
   Clock,
   MessageSquare,
-  FileCheck
+  FileCheck,
+  HelpCircle
 } from "lucide-react";
 
 const GameAudit = () => {
@@ -429,6 +436,119 @@ const GameAudit = () => {
                 </div>
               </CardContent>
             </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <HelpCircle className="w-12 h-12 text-primary mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-muted-foreground">
+              Everything you need to know about the audit process.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-3xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  What do I need to provide for the audit?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Just send me access to your game — whether it's a Steam page link, a playable build, or a demo. 
+                  If you have specific concerns or areas you want me to focus on, let me know and I'll prioritize those in the audit.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  How long does the audit take?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Most audits are delivered within 3-5 business days. The exact time depends on the complexity 
+                  of your game and my current workload. I'll give you an estimated delivery date when you reach out.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  What format is the audit delivered in?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  You'll receive a professional PDF document with clear sections covering gameplay, UX, retention, 
+                  and market positioning. It includes specific recommendations, priority rankings, and actionable 
+                  next steps — not vague feedback.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  Can I ask questions after receiving the audit?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Absolutely! I'm happy to answer follow-up questions and clarify any points in the audit. 
+                  The goal is to make sure you fully understand the feedback and can act on it.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  What stage should my game be in?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Any stage works! Whether you have an early prototype, a demo, an Early Access release, or a fully 
+                  launched game — I can provide valuable feedback. Earlier audits help you avoid costly mistakes, 
+                  while later audits help you optimize and improve.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  Do you only audit Steam games?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  While I specialize in Steam games and understand Steam's ecosystem deeply, I can audit games 
+                  targeting other platforms too. The core principles of good game design, UX, and retention apply 
+                  across platforms.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  What if I disagree with some of the feedback?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  That's completely fine! You know your game and vision best. The audit is meant to provide an 
+                  outside perspective and highlight potential issues — but you decide what to act on. I'm always 
+                  open to discussing my reasoning if you want to understand why I made certain suggestions.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  How do I pay?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Payment is handled after the audit is complete and you're satisfied with the work. I accept 
+                  PayPal and other common payment methods. Just reach out on Discord and we'll sort out the details.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </motion.div>
         </div>
       </section>
